@@ -1,4 +1,9 @@
-var haslo = "Dupa"; //Zdefiniowanie hasła które trzeba odgadnąć
+var hasla = ["HTML", "CSS", "javascript", "Samochód", "Czołg", "Test", "Random", "Learning"];
+
+var losowy = Math.round(Math.random()*(hasla.length-1));
+console.log(losowy);
+
+var haslo = hasla[losowy]; //Zdefiniowanie hasła które trzeba odgadnąć
 
 haslo = haslo.toUpperCase(); //Transformacja hasła do uppercase
 
@@ -10,12 +15,16 @@ var no = new Audio("no.wav");
 
 var haslo1=""; //Hasło które sie zakyrwa i odkrywa (pokazuje myślniki, lub odkrywa litere)
 
+
+
+
 for (i=0; i<length; i++) //Pętla która sprawia że znak w haśle który jest spacją nie zostaje zastąpiony na myślnik. 
 {
     if(haslo.charAt(i)==" ") haslo1 = haslo1 + " ";
     else haslo1 = haslo1 + "-";
 }
 window.onload = start; //window.onload -> Rozkaz do przeglądarki który nakazuje uruchomienie funkcji (funkcja start wypisuje liter do diva, a następnie wypisuje hasło1)
+
 
 var litery = new Array(35); //Tablica z alfabetem, który później gracz wybiera litery
 
@@ -55,7 +64,10 @@ litery[32] = "Z";
 litery[33] = "Ż";
 litery[34] = "Ź";
 
+
+
 function wypiszHaslo()
+
 {
     document.getElementById("board").innerHTML = haslo1; //Zamieniamy wewnetrzny HTML diva na hasło1
 }
